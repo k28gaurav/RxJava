@@ -29,8 +29,5 @@ data class Item(
 
         @SerializedName("thumbnailUrl")
         @ColumnInfo(name = "thumbnail_url")
-        val thumbnailUrl: String,
-
-        @ColumnInfo(name = "price")
-        var price: Double? = 0.0
+        val thumbnailUrl: String
 ): Parcelable

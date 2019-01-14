@@ -18,6 +18,6 @@ interface ItemDao {
     fun getItemsCount(): Single<Int>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertItems(items: List<Item>): List<Long>
+    fun insertItems(items: List<Item>) : List<Long>
 
 }

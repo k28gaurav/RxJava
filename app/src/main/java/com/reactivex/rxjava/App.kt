@@ -5,6 +5,8 @@ import com.reactivex.rxjava.app.di.AppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
+import com.reactivex.rxjava.app.di.DaggerAppComponent
+
 
 class App : DaggerApplication() {
 
