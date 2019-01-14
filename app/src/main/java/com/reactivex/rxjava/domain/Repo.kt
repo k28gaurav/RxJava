@@ -11,6 +11,4 @@ interface Repo {
     fun fetchItems(): Single<List<Item>>
 
     fun saveAllItems(items: List<Item>)
-
-    fun clearItem(): Single<Any>
 }

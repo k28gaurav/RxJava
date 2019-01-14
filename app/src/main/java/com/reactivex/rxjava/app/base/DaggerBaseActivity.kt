@@ -18,6 +18,7 @@ abstract class DaggerBaseActivity<VM : BaseViewModel>: DaggerAppCompatActivity()
     protected open fun initViews() {
         initAnimations()
         initEventHandlers()
+        observeViewModel()
     }
 
     protected open fun initAnimations() {

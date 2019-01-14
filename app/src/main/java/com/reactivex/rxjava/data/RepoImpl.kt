@@ -1,6 +1,7 @@
 package com.reactivex.rxjava.data
 
 import android.arch.lifecycle.LiveData
+import android.arch.paging.LivePagedListBuilder
 import android.arch.paging.PagedList
 import com.reactivex.rxjava.app.rx.SchedulersFacade
 import com.reactivex.rxjava.data.db.AppDb
@@ -13,18 +14,14 @@ class RepoImpl @Inject constructor(private val appDb: AppDb,
                                    private val apiService: ApiService,
                                    private val schedulersFacade: SchedulersFacade): Repo {
     override fun getItems(): LiveData<PagedList<Item>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return LivePagedListBuilder(appDb.itemDao().getItems(), 20).build()
     }
 
     override fun fetchItems(): Single<List<Item>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return apiService.getAllItems()
     }
 
     override fun saveAllItems(items: List<Item>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun clearItem(): Single<Any> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        appDb.itemDao().insertItems(items)
     }
 }
