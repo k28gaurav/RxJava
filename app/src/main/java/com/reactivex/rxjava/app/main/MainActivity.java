@@ -1,7 +1,9 @@
-package com.reactivex.rxjava;
+package com.reactivex.rxjava.app.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.reactivex.rxjava.R;
 
 public class MainActivity extends AppCompatActivity {
 

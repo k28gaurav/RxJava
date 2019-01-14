@@ -1,7 +1,9 @@
 package com.reactivex.rxjava.app.di
 
 import android.app.Application
+import com.reactivex.rxjava.App
 import com.reactivex.rxjava.app.common.ViewModelModule
+import com.reactivex.rxjava.data.di.DataModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,7 +18,7 @@ import javax.inject.Singleton
                       DataModule::class,
                       AndroidInjectionModule::class,
                       AppActivityBindingModule::class])
-interface AppComponent: AndroidInjector<CartApplication>{
+interface AppComponent: AndroidInjector<App>{
     @Component.Builder
     interface Builder {
 

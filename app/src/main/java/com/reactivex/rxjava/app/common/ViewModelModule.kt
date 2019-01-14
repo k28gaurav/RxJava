@@ -2,6 +2,7 @@ package com.reactivex.rxjava.app.common
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import com.reactivex.rxjava.app.main.MainViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -14,7 +15,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(CartViewModel::class)
-    abstract fun cartViewModel(viewModel: CartViewModel): ViewModel
+    @ViewModelKey(MainViewModel::class)
+    abstract fun mainViewModel(viewModel: MainViewModel): ViewModel
 
 }
