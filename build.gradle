@@ -1,14 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+    ext.kotlin_version = '1.2.71'
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,8 +20,45 @@ allprojects {
         google()
         jcenter()
     }
+
+    ext {
+        //Configs are in alphabetical order
+        appConfig = [
+                applicationId: 'com.reactivex.rxjava',
+                appName: 'RxJava',
+                versionCode: 1,
+                versionName: '1.0.0'
+        ]
+
+        config = [
+                appCompat: '27.1.1',
+                compileSdkVersion: 28,
+                constraintLayout: '1.1.2',
+                dagger: '2.16',
+                glide: '4.7.1',
+                gson : '2.8.5',
+                lifecycle: '1.1.1',
+                minSdkVersion: 19,
+                multiDex: '1.0.3',
+                okHttp: '3.11.0',
+                retrofit: '2.4.0',
+                rxAndroid: '2.0.2',
+                rxKotlin : '2.2.0',
+                targetSdkVerison: 28,
+                timber: '4.7.1',
+                test_runner : '1.0.2',
+                espresso_core : '3.0.2',
+                junit:'4.12',
+                mockito_version : '2.22.0',
+                mockito_kotlin : '2.0.0-RC1',
+                roomVersion: '1.1.1',
+                pagingVersion: '1.0.0',
+                pagingRxJava2: '1.0.1'
+        ]
+    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
